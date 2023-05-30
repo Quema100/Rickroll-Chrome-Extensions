@@ -1,6 +1,6 @@
 let rickroll = () => {
     if (window.location.href.startsWith("https://www.youtube.com/")) {
-        const elements = document.querySelectorAll('div, a, span, img, yt-image');
+        const elements = document.querySelectorAll('div, a, span, img, yt-image, h3, h2, h1');
         elements.forEach((element) => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
