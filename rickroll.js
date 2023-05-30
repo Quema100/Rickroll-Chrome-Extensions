@@ -1,9 +1,15 @@
 let rickroll = () => {
-    if (window.location.href === "https://www.youtube.com/") {
-        window.addEventListener('click', () => {
-            window.location.href = "https://youtu.be/v_gO_P8gug8";
+    if (window.location.href.startsWith("https://www.youtube.com/")) {
+        const elements = document.querySelectorAll('div, a, span, img, yt-image');
+        elements.forEach((element) => {
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (!window.location.href.endsWith('https://youtu.be/dQw4w9WgXcQ')) {
+                    window.location.replace('https://youtu.be/dQw4w9WgXcQ');
+                }
+            });
         });
-    };
+    }
 };
 
 window.onload = rickroll;
