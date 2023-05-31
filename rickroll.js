@@ -1,6 +1,6 @@
 let rickroll = () => {
     if (window.location.href.startsWith("https://www.youtube.com/")) {
-        const elements = document.querySelectorAll('div, a, span, img, yt-image, h3, h2, h1');
+        const elements = document.querySelectorAll('*');
         elements.forEach((element) => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -8,7 +8,8 @@ let rickroll = () => {
                     window.location.replace('https://youtu.be/dQw4w9WgXcQ');
                 }
             });
-        });
+         
+      });
     }
 };
 
