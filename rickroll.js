@@ -6,8 +6,11 @@ let rickroll = () => {
                 e.preventDefault();
                 window.location.replace('https://youtu.be/dQw4w9WgXcQ');
             });
-         
       });
+      window.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.replace('https://youtu.be/dQw4w9WgXcQ');
+    });
     }
 };
 
