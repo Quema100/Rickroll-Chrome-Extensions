@@ -3,10 +3,8 @@ let rickroll = () => {
         const elements = document.querySelectorAll('*');
         elements.forEach((element) => {
             element.addEventListener('click', (e) => {
-                if (!window.location.href.endsWith('https://youtu.be/dQw4w9WgXcQ')) {
-                    e.preventDefault();
-                    window.location.replace('https://youtu.be/dQw4w9WgXcQ');
-                }
+                e.preventDefault();
+                window.location.replace('https://youtu.be/dQw4w9WgXcQ');
             });
          
       });
