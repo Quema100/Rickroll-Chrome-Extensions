@@ -5,12 +5,13 @@ let rickroll = () => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
                 window.location.replace('https://youtu.be/dQw4w9WgXcQ');
-                if (!window.location.href.endsWith('https://youtu.be/dQw4w9WgXcQ')) {
-                    e.preventDefault();
-                    window.location.replace('https://youtu.be/dQw4w9WgXcQ');
-                }
             });
       });
+      if(window.location.pathname === '/watch' && (window.location.search !== '?v=dQw4w9WgXcQ' || window.location.search !== '?v=dQw4w9WgXcQ&feature=youtu.be')){
+        window.location.replace('https://youtu.be/dQw4w9WgXcQ');
+        return
+      }
+      if (window.location.href==='https://youtu.be/dQw4w9WgXcQ'|| window.location.pathname === '/watch' && (window.location.search === '?v=dQw4w9WgXcQ' || window.location.search === '?v=dQw4w9WgXcQ&feature=youtu.be'))return
     }
 };
 
