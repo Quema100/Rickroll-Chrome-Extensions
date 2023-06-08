@@ -4,16 +4,23 @@ let rickroll = () => {
         elements.forEach((element) => {
             element.addEventListener('click', (e) => {
                 e.preventDefault();
-                window.location.replace('https://youtu.be/dQw4w9WgXcQ');
-            });
+                window.location.href ='https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                if(window.location.pathname === '/watch' && window.location.search !== '?v=dQw4w9WgXcQ'){
+                  window.location.href ='https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                }
+              });
       });
-      if(window.location.pathname === '/watch' && (window.location.search !== '?v=dQw4w9WgXcQ' || window.location.search !== '?v=dQw4w9WgXcQ&feature=youtu.be')){
-        window.location.replace('https://youtu.be/dQw4w9WgXcQ');
-        return
+      if(window.location.pathname === '/watch' && window.location.search !== '?v=dQw4w9WgXcQ'){
+        window.location.href ='https://www.youtube.com/watch?v=dQw4w9WgXcQ';
       }
-      if (window.location.href==='https://youtu.be/dQw4w9WgXcQ'|| window.location.pathname === '/watch' && (window.location.search === '?v=dQw4w9WgXcQ' || window.location.search === '?v=dQw4w9WgXcQ&feature=youtu.be'))return
+      if (window.location.pathname === '/watch' && window.location.search === '?v=dQw4w9WgXcQ')return
+      if (window.location.href === 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')return
+      if (window.location.href === 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=youtu.be')return
     }
 };
 
 window.onload = rickroll;
 window.onclick = rickroll;
+setInterval(()=>{
+  rickroll()
+},1000)
